@@ -1,23 +1,28 @@
-
 import Row from '../ui/Row'
 import Heading from '../Heading'
-import { useEffect } from 'react'
-import { getCottage } from '../services/apiCottage'
+import CottageTable from '../features/cottages/CottageTable'
+import Button from '../ui/Button'
+import { useState } from 'react'
+import CreateCottageForm from '../ui/CreateCottageForm'
 
 const Cottages = () => {
 
-
-
-  useEffect(()=>{
-    getCottage().then((data)=>console.log(data))
-  },[])
-
+  const [showForm, setShowForm] = useState(false);
 
   return (
-    <Row type="horizontal">
-      <Heading as="h1">All cottage</Heading>
-      <p>TEST</p>
-    </Row>
+    <>
+      <Row type="horizontal">
+        <Heading as="h1">All cottage</Heading>
+        <p>filter/sort</p>
+      </Row>
+
+
+      <Row>
+        <CottageTable />
+        <Button onClick={() => setShowForm((show) => !show)} >Add new Cottage</Button>
+        {showForm && <CreateCottageForm />}
+      </Row>
+    </>
   )
 }
 

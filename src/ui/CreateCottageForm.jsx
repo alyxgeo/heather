@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import Input from "./Input";
+import Button from "./Button";
+import Form from "./Form";
+import Textarea from "./Textarea";
+import FileInput from "./FileInput";
 
-import Input from "../../ui/Input";
-import Form from "../../ui/Form";
-import Button from "../../ui/Button";
-import FileInput from "../../ui/FileInput";
-import Textarea from "../../ui/Textarea";
 
 const FormRow = styled.div`
   display: grid;
@@ -42,7 +42,7 @@ const Error = styled.span`
   color: var(--color-red-700);
 `;
 
-function CreateCabinForm() {
+function CreateCottageForm() {
   return (
     <Form>
       <FormRow>
@@ -86,4 +86,4 @@ function CreateCabinForm() {
   );
 }
 
-export default CreateCabinForm;
+export default CreateCottageForm;
